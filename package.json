@@ -20,16 +20,18 @@
           "squirrel"
         ],
         "darwin": [
-          "zip"
+          "dmg"
         ],
         "linux": [
           "deb",
           "rpm"
         ]
       },
-      "electronPackagerConfig": {},
+      "electronPackagerConfig": {
+        "icon": "arsenal.png.icns"
+      },
       "electronWinstallerConfig": {
-        "name": "arsenal"
+        "name": "Arsenal"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
