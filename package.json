@@ -28,7 +28,7 @@
         ]
       },
       "electronPackagerConfig": {
-        "icon": "arsenal.png.icns"
+        "icon": "arsenal.icns"
       },
       "electronWinstallerConfig": {
         "name": "Arsenal"

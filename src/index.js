@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Menu } from 'electron'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,6 +13,7 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadURL('http://staging.arsenal.camsgear.com')
+  // mainWindow.loadURL('http://localhost:4114')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -24,6 +25,7 @@ const createWindow = () => {
     // when you should delete the corresponding element.
     mainWindow = null
   })
+  require('./menus.js')
 }
 
 // This method will be called when Electron has finished
