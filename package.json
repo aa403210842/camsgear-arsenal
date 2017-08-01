@@ -7,6 +7,7 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
+    "package32": "electron-forge package --arch=all",
     "make": "electron-forge make",
     "lint": "eslint src"
   },
@@ -54,7 +55,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "electron-prebuilt-compile": "1.6.11",
-    "electron-rebuild": "^1.5.11",
+    "electron-rebuild": "^1.6.0",
     "eslint": "^4.2.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-import": "^2.7.0",

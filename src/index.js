@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron'
+import { app, BrowserWindow } from 'electron'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,8 +12,9 @@ const createWindow = () => {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadURL('http://staging.arsenal.camsgear.com')
-  // mainWindow.loadURL('http://localhost:4114')
+  // mainWindow.loadURL('http://arsenal.camsgear.com')
+  mainWindow.loadURL('http://localhost:4115')
+  // mainWindow.loadURL('http://192.168.31.201:4115')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
