@@ -3,38 +3,18 @@
     "development": {
       "application/javascript": {
         "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "electron": 1.6
-              }
-            }
-          ],
-          "react"
+          ["env", { "targets": { "electron": "1.8" } }]
         ],
-        "plugins": [
-          "transform-async-to-generator"
-        ],
+        "plugins": ["transform-async-to-generator"],
         "sourceMaps": "inline"
       }
     },
     "production": {
       "application/javascript": {
         "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "electron": 1.6
-              }
-            }
-          ],
-          "react"
+          ["env", { "targets": { "electron": "1.8" } }]
         ],
-        "plugins": [
-          "transform-async-to-generator"
-        ],
+        "plugins": ["transform-async-to-generator"],
         "sourceMaps": "none"
       }
     }

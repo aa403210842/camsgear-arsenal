@@ -8,8 +8,9 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "package32": "electron-forge package --arch=all",
+    "publish": "electron-forge publish",
     "make": "electron-forge make",
-    "lint": "eslint src"
+    "lint": "standard src"
   },
   "keywords": [],
   "author": "edwin",
@@ -29,6 +30,8 @@
         ]
       },
       "electronPackagerConfig": {
+        "asar": true,
+        "packageManager": "yarn",
         "icon": "arsenal.icns"
       },
       "electronWinstallerConfig": {
@@ -47,19 +50,21 @@
     }
   },
   "dependencies": {
-    "electron-compile": "^6.4.1",
-    "request": "^2.81.0"
+    "axios": "^0.18.0",
+    "devtron": "^1.4.0",
+    "electron-compile": "^6.4.2",
+    "electron-devtools-installer": "^2.2.3",
+    "electron-gh-releases": "^2.0.4",
+    "electron-is-dev": "^0.3.0",
+    "ms": "^2.1.1",
+    "request": "^2.85.0",
+    "usb-detection": "^2.1.0"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1",
-    "electron-prebuilt-compile": "1.6.11",
-    "electron-rebuild": "^1.6.0",
-    "eslint": "^4.2.0",
-    "eslint-config-airbnb": "^15.0.2",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0"
+    "babel-preset-env": "^1.6.1",
+    "electron-prebuilt-compile": "1.8.3",
+    "electron-rebuild": "^1.7.3",
+    "standard": "^11.0.0"
   }
 }

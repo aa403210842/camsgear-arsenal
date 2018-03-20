@@ -1,77 +1,37 @@
-const {Menu} = require('electron')
-const electron = require('electron')
-const app = electron.app
+import { app, Menu } from 'electron'
 
 const template = [
   {
-    label: 'Edit',
+    label: '编辑', // Edit
     submenu: [
-      {
-        role: 'undo'
-      },
-      {
-        role: 'redo'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'cut'
-      },
-      {
-        role: 'copy'
-      },
-      {
-        role: 'paste'
-      }
+      { role: 'undo', label: '撤销' },
+      { role: 'redo', label: '重做' },
+      { type: 'separator' },
+      { role: 'cut', label: '剪切' },
+      { role: 'copy', label: '复制' },
+      { role: 'paste', label: '粘贴' }
     ]
   },
   {
-    label: 'View',
+    label: '视图', // View
     submenu: [
-      {
-        label: 'Reload',
-        accelerator: 'CmdOrCtrl+R',
-        click (item, focusedWindow) {
-          if (focusedWindow) focusedWindow.reload()
-        }
-      },
-      {
-        label: 'Toggle Developer Tools',
-        accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click (item, focusedWindow) {
-          if (focusedWindow) focusedWindow.webContents.toggleDevTools()
-        }
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'resetzoom'
-      },
-      {
-        role: 'zoomin'
-      },
-      {
-        role: 'zoomout'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'togglefullscreen'
-      }
+      { role: 'reload', label: '重新加载' },
+      { role: 'forcereload', label: '强制重载' },
+      { role: 'toggledevtools', label: '检测' },
+      { type: 'separator' },
+      { role: 'resetzoom', label: '实际大小' },
+      { role: 'zoomin', label: '放大' },
+      { role: 'zoomout', label: '缩小' },
+      { type: 'separator' },
+      { role: 'togglefullscreen' }
     ]
   },
   {
+    label: '窗口', // Window
     role: 'window',
     submenu: [
-      {
-        role: 'minimize'
-      },
-      {
-        role: 'close'
-      }
+      { role: 'minimize', label: '最小化' },
+      { role: 'close', label: '关闭窗口' }
     ]
   }
 ]
@@ -81,76 +41,27 @@ if (process.platform === 'darwin') {
   template.unshift({
     label: name,
     submenu: [
-      {
-        role: 'about'
-      },
-      {
-        type: 'separator'
-      },
+      { role: 'about', label: `关于 ${name}` },
+      { type: 'separator' },
       {
         role: 'services',
         submenu: []
       },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'hide'
-      },
-      {
-        role: 'hideothers'
-      },
-      {
-        role: 'unhide'
-      },
-      {
-        type: 'separator'
-      },
-      {
-        role: 'quit'
-      }
+      { type: 'separator' },
+      { role: 'hide', label: '隐藏' },
+      { role: 'hideothers', label: '隐藏其他应用' },
+      { role: 'unhide' },
+      { type: 'separator' },
+      { role: 'quit', label: '退出' }
     ]
   })
-  // Edit menu.
-  template[1].submenu.push(
-    {
-      type: 'separator'
-    },
-    {
-      label: 'Speech',
-      submenu: [
-        {
-          role: 'startspeaking'
-        },
-        {
-          role: 'stopspeaking'
-        }
-      ]
-    }
-  )
   // Window menu.
   template[3].submenu = [
-    {
-      label: 'Close',
-      accelerator: 'CmdOrCtrl+W',
-      role: 'close'
-    },
-    {
-      label: 'Minimize',
-      accelerator: 'CmdOrCtrl+M',
-      role: 'minimize'
-    },
-    {
-      label: 'Zoom',
-      role: 'zoom'
-    },
-    {
-      type: 'separator'
-    },
-    {
-      label: 'Bring All to Front',
-      role: 'front'
-    }
+    { role: 'close', label: '关闭窗口' },
+    { role: 'minimize', label: '最小化' },
+    { role: 'zoom', label: '缩放' }
+    // { type: 'separator' },
+    // { role: 'front', label: '前置全部窗口' }
   ]
 }
 
