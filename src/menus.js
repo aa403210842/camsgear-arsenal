@@ -1,4 +1,5 @@
 import { app, Menu } from 'electron'
+// import path from 'path'
 
 const template = [
   {
@@ -41,7 +42,10 @@ if (process.platform === 'darwin') {
   template.unshift({
     label: name,
     submenu: [
-      { role: 'about', label: `关于 ${name}` },
+      {
+        role: 'about',
+        label: `关于 ${name}`
+      },
       { type: 'separator' },
       {
         role: 'services',

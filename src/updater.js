@@ -5,9 +5,9 @@ import isDev from 'electron-is-dev'
 const isLinux = process.platform === 'linux'
 const eventName = isLinux ? 'update-available' : 'update-downloaded'
 let isInited = false
-
-const server = 'https://your-deployment-url.com'
-const feed = `${server}/update/${process.platform}/${app.getVersion()}`
+// http://camdora-static.oss-cn-hangzhou.aliyuncs.com/arsenal/releases/darwin
+const server = 'https://camdora-static.oss-cn-hangzhou.aliyuncs.com/arsenal'
+const feed = `${server}/releases/${process.platform}/${app.getVersion()}`
 autoUpdater.setFeedURL(feed)
 
 autoUpdater.on(eventName, (event, releaseNotes, releaseName) => {
@@ -38,7 +38,7 @@ app.on('ready', () => {
   if (!isDev) {
     setTimeout(() => {
       autoUpdater.checkForUpdates()
-    }, ms('10s'))
+    }, ms('30s'))
 
     // setInterval(() => {
     //   autoUpdater.checkForUpdates();

@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import isDev from 'electron-is-dev'
 
+// import './updater.js'
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
 // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
 const HOST_URL = isDev
@@ -12,8 +13,8 @@ let mainWindow
 const createWindow = () => {
   // 创建浏览器窗口
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 1000,
+    height: 750
   })
   // 然后加载应用的 index.html
   mainWindow.loadURL(HOST_URL)
@@ -28,7 +29,7 @@ const createWindow = () => {
   })
   // 任务栏的进度条
   // mainWindow.setProgressBar(0.5)
-  require('./menus.js')
+  require('./menus')
 }
 // Electron 会在初始化后并准备
 // 创建浏览器窗口时，调用这个函数
